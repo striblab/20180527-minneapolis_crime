@@ -2,15 +2,15 @@
 
 	<div id="trend" class="slide">
 		<div class="chartTitle">An uptick in violent crime</div>
-		<div class="chatter">The <span class='blue4 legendary'>violent crime rate</span> in Minneapolis, after falling significantly, has slowly increased by about 17 percent between 2011 and 2016.</div>
+		<div class="chatter">The <span class='blue4 legendary'>violent crime rate</span> in Minneapolis, after falling significantly, has slowly increased by about 17 percent between 2011 and 2016. The <span class='gray5 legendary'>overall crime rate</span> has also increased.</div>
 		<div class="chart" id="chartTrend"></div>
 		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
 	</div>
 
 
-	<div id="trend" class="slide">
+	<div id="breakdown" class="slide">
 		<div class="chartTitle">Breaking down Minneapolis crime rates</div>
-		<div class="chatter">Shows <span class='blue4 legendary'>rates per 100,000 people</span> in Minneapolis for various crimes 2000-2017 and whether it <span class='legendary green3'>decreased</span> or <span class='legendary red3'>increased</span> the past year.</div>
+		<div class="chatter">Shows <span class='blue4 legendary'>rates per 100,000 people</span> for various Minneapolis crimes 2000-2017 and whether it <span class='legendary green3'>decreased</span> or <span class='legendary red3'>increased</span> last year.</div>
 		<div class="breaker"></div>
 		<div class="chart" id="chartTypes">
 			<div class="smallchart">
@@ -55,4 +55,27 @@
 	</div>
 
 
+	<div id="city" class="slide">
+		<div class="chartTitle">Crime rates by neighborhood</div>
+		<div class="chatter">Shows average monthly crime rates from <span class='blue1 legendary'>lower</span> to <span class='blue5 legendary'>higher</span>, by Minneapolis neighborhood from 2000 through 2017.</div>
+		<div id="map" class="map"><svg width="400" height="300" viewBox="0 0 400 350" preserveAspectRatio="xMidYMid"></svg></div>
+		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
+	</div>
+
+	<div id="city" class="slide">
+		<div class="chartTitle">Incidents by location</div>
+		<div class="chatter">Maps various kinds of reported crimes by location 2010 through 2016.</div>
+		<div id="mapSearch" class="map"></div>
+		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
+	</div>
+
+	<div id="time" class="slide">
+		<div class="chartTitle">Incidents by time of day</div>
+		<div class="chatter">Shows average number of incidents by hour of day 2010 to 2017 in Minneapolis communities, shaded from <span class="legendary blue1">less</span> to <span class="legendary blue5">more</span>.</div>
+		<div id="chartHeader"></div>
+		<div id="chartTime" class="chart">
+			<div class="row toprow"><div class='type'>Crime</div><div class='time'>00</div><div class='time'>01</div><div class='time'>02</div><div class='time'>03</div><div class='time'>04</div><div class='time'>05</div><div class='time'>06</div><div class='time'>07</div><div class='time'>08</div><div class='time'>09</div><div class='time'>10</div><div class='time'>11</div><div class='time'>12</div><div class='time'>13</div><div class='time'>14</div><div class='time'>15</div><div class='time'>16</div><div class='time'>17</div><div class='time'>18</div><div class='time'>19</div><div class='time'>20</div><div class='time'>21</div><div class='time'>22</div><div class='time'>23</div></div>
+		</div>
+		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
+	</div>
 </div>
