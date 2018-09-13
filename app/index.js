@@ -368,7 +368,7 @@ d3.json("./data/rates.json", function(error, dataLoadCounts) {
                     .attr("d", path)
                     // .on("click", clicked)
                     .attr("id", function(d) {
-                        var str = d.properties.Name + "" + d.properties.GEOID;
+                        var str = d.properties.Name;
                         return str.replace(new RegExp(" ", "g"), "-");
                     })
                     .style("fill", function(d) {
