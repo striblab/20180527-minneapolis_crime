@@ -17,6 +17,10 @@
     opacity:1 !important;
 }
 
+.slide {
+  display:none;
+}
+
 .chart-tooltip {
   font-size:0.8em !important;
 }
@@ -199,9 +203,6 @@ display: none !important;
     .smallchart {
       display:inline-block;
       width:49.5%;
-    }
-    .xwidth {
-      width:100%;
     }
 }
 

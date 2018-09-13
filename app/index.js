@@ -32,6 +32,9 @@ if (selected != null) {
     $(".slide").hide();
     $("#" + selected).show();
 }
+if (selected == "all") {
+    $(".slide").show();
+}
 
 
 //CHARTS
@@ -50,10 +53,10 @@ function chartTrend() {
             x: 'x',
             // xFormat: '%Y-%m-%d %H:%M:%S',
             columns: [
-                ['x', 2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018],
+                ['x', 2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017],
                 // ['Rate',100.4956545,92.80404871,79.66950966,79.59245596,74.20189819,54.17179711,66.22293085,56.95042699,63.470021,50.68743188],
                 ['Rate', 1173.755547,1082.244291,1097.98798,1201.689795,1261.767782,1437.152931,1671.520994,1458.945415,1253.168807,1116.653866,1063.051195,945.6703612,1036.365731,1021.105508,1008.81896,1084.803778,1104.650055,null,null],
-                ['Overall', 11515.83991,13377.14567,12756.24707,13601.60424,13888.19082,13524.27212,14352.36736,14428.57475,15773.16337,17192.67048,17998.04109,16765.0647,16035.30335,16800.89983,18188.39822,18978.62705,19245.04336,null,null]
+                // ['Overall', 11515.83991,13377.14567,12756.24707,13601.60424,13888.19082,13524.27212,14352.36736,14428.57475,15773.16337,17192.67048,17998.04109,16765.0647,16035.30335,16800.89983,18188.39822,18978.62705,19245.04336,null,null]
             ],
             axes: {
                 'Rate': 'y',
@@ -92,7 +95,7 @@ function chartTrend() {
                 }
             },
             y2: {
-                show: true,
+                show: false,
                 max: 20000,
                 min: 0,
                 padding: {
@@ -113,7 +116,7 @@ function chartTrend() {
                 },
                 tick: {
                     count: 4,
-                    values: [2000, 2006, 2012, 2018],
+                    values: [2000, 2005, 2011, 2017],
                     multiline: false,
                 }
             }
@@ -123,18 +126,15 @@ function chartTrend() {
                 show:false
               },
           },
-      //    regions: [
-      //   {axis: 'x', start: 2011, end: 2016, class: 'hottest'},
-      // ],
+         regions: [
+        {axis: 'x', start: 2011, end: 2016, class: 'hottest'},
+      ],
       tooltip: {
         contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
           return '<div class="chart-tooltip gray3">' +
             '<span class="tooltip-label">' + d[0].x + '</span></div><div class="chart-tooltip blue4">' +
-            '<span class="tooltip-label">Violent:</span>' +
+            '<span class="tooltip-label">Rate:</span>' +
             '<span class="tooltip-value">' + defaultValueFormat(d[0].value) + '</span>' +
-            '</div><div class="chart-tooltip gray5">' +
-            '<span class="tooltip-label">Overall:</span>' +
-            '<span class="tooltip-value">' + defaultValueFormat(d[1].value) + '</span>' +
             '</div>';
         }
       }
@@ -229,7 +229,8 @@ function smallChart(container,end,ceiling,data) {
     });
 }
 
-smallChart("#overall",2016,2000,['Rate', 1173.755547,1082.244291,1097.98798,1201.689795,1261.767782,1437.152931,1671.520994,1458.945415,1253.168807,1116.653866,1063.051195,945.6703612,1036.365731,1021.105508,1008.81896,1084.803778,1104.650055,null,null]);
+smallChart("#violent",2016,2000,['Rate', 1173.755547,1082.244291,1097.98798,1201.689795,1261.767782,1437.152931,1671.520994,1458.945415,1253.168807,1116.653866,1063.051195,945.6703612,1036.365731,1021.105508,1008.81896,1084.803778,1104.650055,null,null]);
+smallChart("#overall",2016,20000,['Rate', 19245.04336,18978.62705,18188.39822,16800.89983,16035.30335,16765.0647,17998.04109,17192.67048,15773.16337,14428.57475,14352.36736,13524.27212,13888.19082,13601.60424,12756.24707,13377.14567,11515.83991,null,null]);
 smallChart("#arson",2016,100,['Rate', 70.04375121,67.98345387,69.50614058,65.39452517,63.80753138,57.51706813,63.40696446,49.48198546,40.49921693,35.94601374,31.10476818,36.09428859,30.62763083,30.67805995,28.69140449,28.12005323,20.71665333,null,null]);
 smallChart("#mtv",2017,2000,['Rate', 1018.77068,1074.922996,917.951398,940.6348501,970.7112971,1017.252541,956.7750084,827.2769445,625.1746208,479.969795,492.7099833,463.0381594,488.4714456,396.8194584,378.5806508,421.8007985,478.1498838,568.6364156,null]);
 smallChart("#homicide",2017,50,['Rate', 13.06786403,11.24341737,12.28116018,12.03259263,14.12133891,12.1224314,14.69185762,12.11277769,10.25296631,4.913483893,10.19399965,9.539204843,10.99453415,9.976604862,7.780719862,12.1207126,8.810530727,9.763020536,null]);
@@ -367,7 +368,7 @@ d3.json("./data/rates.json", function(error, dataLoadCounts) {
                     .attr("d", path)
                     // .on("click", clicked)
                     .attr("id", function(d) {
-                        var str = d.properties.Name + "" + d.properties.GEOID + "_" + geo;
+                        var str = d.properties.Name + "" + d.properties.GEOID;
                         return str.replace(new RegExp(" ", "g"), "-");
                     })
                     .style("fill", function(d) {
@@ -591,47 +592,47 @@ map.on('load', function() {
    data: incidents
  });
 
-         map.addLayer({
-                  "id": "theft-layer",
-                  "type": "circle",
-                  "source": "incidents",
-                  "paint": {
-                     "circle-radius": 2,
-                     "circle-color": 'rgba(66, 134, 244, 0.09)'
-                  },
-                 "filter": [
-                  "==",
-                  "Offense",
-                  "THEFT"]
-        });
+        //  map.addLayer({
+        //           "id": "theft-layer",
+        //           "type": "circle",
+        //           "source": "incidents",
+        //           "paint": {
+        //              "circle-radius": 2,
+        //              "circle-color": 'rgba(66, 134, 244, 0.09)'
+        //           },
+        //          "filter": [
+        //           "==",
+        //           "Offense",
+        //           "THEFT"]
+        // });
 
-         map.addLayer({
-                  "id": "arson-layer",
-                  "type": "circle",
-                  "source": "incidents",
-                  "paint": {
-                     "circle-radius": 2,
-                     "circle-color": 'rgba(224,114,66, 0.09)'
-                  },
-                 "filter": [
-                  "==",
-                  "Offense",
-                  "ARSON"]
-        });
+        //  map.addLayer({
+        //           "id": "arson-layer",
+        //           "type": "circle",
+        //           "source": "incidents",
+        //           "paint": {
+        //              "circle-radius": 2,
+        //              "circle-color": 'rgba(224,114,66, 0.09)'
+        //           },
+        //          "filter": [
+        //           "==",
+        //           "Offense",
+        //           "ARSON"]
+        // });
 
-         map.addLayer({
-                  "id": "autoth-layer",
-                  "type": "circle",
-                  "source": "incidents",
-                  "paint": {
-                     "circle-radius": 2,
-                     "circle-color": 'rgba(41,158,61, 0.09)'
-                  },
-                 "filter": [
-                  "==",
-                  "Offense",
-                  "AUTOTH"]
-        });
+        //  map.addLayer({
+        //           "id": "autoth-layer",
+        //           "type": "circle",
+        //           "source": "incidents",
+        //           "paint": {
+        //              "circle-radius": 2,
+        //              "circle-color": 'rgba(41,158,61, 0.09)'
+        //           },
+        //          "filter": [
+        //           "==",
+        //           "Offense",
+        //           "AUTOTH"]
+        // });
 
         //  map.addLayer({
         //           "id": "incidents-layer",

@@ -1,6 +1,6 @@
 {
   "about this file": "This document defines configuration for this project that is not content or copy.",
-  "projectIdentifier": "20180527-minneapolis_crime",
+  "projectIdentifier": "20180913-crime",
   "social": {
     "image": "assets/images/strib/strib-logo-name-social-card.png"
   },
@@ -24,20 +24,20 @@
   "publish": {
     "default": {
       "bucket": "static.startribune.com",
-      "path": "news/projects-staging/all/20180527-minneapolis_crime",
-      "url": "http://static.startribune.com/news/projects-staging/all/20180527-minneapolis_crime/",
+      "path": "news/projects-staging/all/20180913-crime",
+      "url": "http://static.startribune.com/news/projects-staging/all/20180913-crime/",
       "cacheSeconds": 30
     },
     "testing": {
       "bucket": "stribtest-bucket",
-      "path": "news/projects/20180527-minneapolis_crime",
-      "url": "https://s3.amazonaws.com/stribtest-bucket/news/projects/20180527-minneapolis_crime/",
+      "path": "news/projects/20180913-crime",
+      "url": "https://s3.amazonaws.com/stribtest-bucket/news/projects/20180913-crime/",
       "cacheSeconds": 30
     },
     "production": {
       "bucket": "static.startribune.com",
-      "path": "news/projects/all/20180527-minneapolis_crime",
-      "url": "http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/",
+      "path": "news/projects/all/20180913-crime",
+      "url": "http://static.startribune.com/news/projects/all/20180913-crime/",
       "cacheSeconds": 600
     }
   },

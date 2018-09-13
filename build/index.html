@@ -33,11 +33,11 @@
 
 <!-- Social Media Tags -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/">
+<meta property="og:url" content="http://static.startribune.com/news/projects/all/20180913-crime/">
 <meta property="og:title" content="Minneapolis crime rates analysis">
 <meta property="og:description" content="">
 
-  <meta property="og:image" content="http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/assets/images/strib/strib-logo-name-social-card.png">
+  <meta property="og:image" content="http://static.startribune.com/news/projects/all/20180913-crime/assets/images/strib/strib-logo-name-social-card.png">
 
 
 <meta name="twitter:card" content="summary">
@@ -45,7 +45,7 @@
 <meta name="twitter:title" content="Minneapolis crime rates analysis">
 <meta name="twitter:description" content="">
 
-  <meta name="twitter:image" content="http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/assets/images/strib/strib-logo-name-social-card.png">
+  <meta name="twitter:image" content="http://static.startribune.com/news/projects/all/20180913-crime/assets/images/strib/strib-logo-name-social-card.png">
 
 
 <!-- Google structured data -->
@@ -55,14 +55,14 @@
     "@type": "NewsArticle",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/"
+      "@id": "http://static.startribune.com/news/projects/all/20180913-crime/"
     },
     "headline": "Minneapolis crime rates analysis",,
     "description": ""
     
     "image": {
       "@type": "ImageObject",
-      "url": "http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/assets/images/strib/strib-logo-name-social-card.png"
+      "url": "http://static.startribune.com/news/projects/all/20180913-crime/assets/images/strib/strib-logo-name-social-card.png"
     },
     
     "author": {
@@ -74,7 +74,7 @@
       "name": "Star Tribune",
       "logo": {
         "@type": "ImageObject",
-        "url": "http://static.startribune.com/news/projects/all/20180527-minneapolis_crime/assets/images/strib/strib-logo-transparent-307.png",
+        "url": "http://static.startribune.com/news/projects/all/20180913-crime/assets/images/strib/strib-logo-transparent-307.png",
         "width": 307,
         "height": 292
       }
@@ -105,7 +105,7 @@
 
 	<div id="trend" class="slide">
 		<div class="chartTitle">An uptick in violent crime</div>
-		<div class="chatter">The <span class='blue4 legendary'>violent crime rate</span> in Minneapolis, after falling significantly, has slowly increased by about 17 percent between 2011 and 2016. The <span class='gray5 legendary'>overall crime rate</span> has also increased.</div>
+		<div class="chatter">The <span class='blue4 legendary'>violent crime rate</span> in Minneapolis, after falling significantly, has slowly increased by about 17 percent between 2011 and 2016.</div>
 		<div class="chart" id="chartTrend"></div>
 		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
 	</div>
@@ -117,16 +117,20 @@
 		<div class="breaker"></div>
 		<div class="chart" id="chartTypes">
 			<div class="smallchart">
-				<div class="label legendary green3">Arson <div class="stat">▼-26%</div></div>
+				<div class="label legendary green4">Arson <div class="stat">▼-26%</div></div>
 				<div class="chart" id="arson"></div>
 			</div>
+			<!-- <div class="smallchart">
+				<div class="label legendary green3">Overall <div class="stat">▼-14%</div></div>
+				<div class="chart" id="overall"></div>
+			</div> -->
 			<div class="smallchart">
 				<div class="label legendary green2">Robbery <div class="stat">▼-4%</div></div>
 				<div class="chart" id="robbery"></div>
 			</div>
 			<div class="smallchart xwidth">
 				<div class="label legendary red1">Violent Crime <div class="stat">▲+2%</div></div>
-				<div class="chart" id="overall"></div>
+				<div class="chart" id="violent"></div>
 			</div>
 		    <div class="smallchart">
 				<div class="label legendary red2">Assault <div class="stat">▲+8%</div></div>
@@ -152,7 +156,6 @@
 				<div class="label legendary red4">Vehicle Theft <div class="stat">▲+19%</div></div>
 				<div class="chart" id="mtv"></div>
 			</div>
-
 		</div>
 		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
 	</div>
@@ -165,23 +168,23 @@
 		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
 	</div>
 
-	<div id="city" class="slide">
+<!-- 	<div id="city" class="slide">
 		<div class="chartTitle">Incidents by location</div>
 		<div class="chatter">Maps various kinds of reported crimes by location 2010 through 2016.</div>
 		<div id="mapSearch" class="map"></div>
 		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
-	</div>
+	</div> -->
 
-	<div id="time" class="slide">
+	<!-- <div id="time" class="slide">
 		<div class="chartTitle">Incidents by time of day</div>
 		<div class="chatter">Shows average number of incidents by hour of day 2010 to 2017 in Minneapolis communities, shaded from <span class="legendary blue1">less</span> to <span class="legendary blue5">more</span>.</div>
 		<div id="chartHeader"></div>
 		<div id="chartTime" class="chart">
-			<div class="row toprow"><div class='type'>Crime</div><div class='time'>00</div><div class='time'>01</div><div class='time'>02</div><div class='time'>03</div><div class='time'>04</div><div class='time'>05</div><div class='time'>06</div><div class='time'>07</div><div class='time'>08</div><div class='time'>09</div><div class='time'>10</div><div class='time'>11</div><div class='time'>12</div><div class='time'>13</div><div class='time'>14</div><div class='time'>15</div><div class='time'>16</div><div class='time'>17</div><div class='time'>18</div><div class='time'>19</div><div class='time'>20</div><div class='time'>21</div><div class='time'>22</div><div class='time'>23</div></div>
+			<div class="row toprow"><div class='type'>Hour</div><div class='time'>00</div><div class='time'>01</div><div class='time'>02</div><div class='time'>03</div><div class='time'>04</div><div class='time'>05</div><div class='time'>06</div><div class='time'>07</div><div class='time'>08</div><div class='time'>09</div><div class='time'>10</div><div class='time'>11</div><div class='time'>12</div><div class='time'>13</div><div class='time'>14</div><div class='time'>15</div><div class='time'>16</div><div class='time'>17</div><div class='time'>18</div><div class='time'>19</div><div class='time'>20</div><div class='time'>21</div><div class='time'>22</div><div class='time'>23</div></div>
 		</div>
 		<div class="byline">Source: Minneapolis Police Department | Graphic by <a href="http://www.startribune.com/jeff-hargarten/274254381/" target="new_">Jeff Hargarten, Star Tribune</a> | <a href="./data/maindata.xlsx" target="new_">Download Data</a></div>
 	</div>
-</div>
+</div> -->
     </main>
 
     <!-- Footer -->
