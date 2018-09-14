@@ -318,7 +318,7 @@ d3.json("./data/rates.json", function(error, dataLoadCounts) {
         //     }
         // }
 
-        return "<div>" + d.properties.Name + "</div><div><span class='legendary' style='background-color:" + color + "'>" + d3.format(",.1f")(rate) + "</span> per 10,000 police calls</div>";
+        return "<div>" + d.properties.Name + "</div><div><span class='legendary' style='background-color:" + color + "'>" + d3.format(",.1f")(rate) + "</span> per 10,000 people</div>";
 
     }
 
