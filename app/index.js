@@ -91,7 +91,7 @@ function chartTrend() {
                 tick: {
                     count: 6,
                     values: [0, 500, 1000, 1500, 2000],
-                    format: d3.format(',.1f')
+                    format: d3.format(',.0f')
                 }
             },
             y2: {
@@ -105,7 +105,7 @@ function chartTrend() {
                 tick: {
                     count: 6,
                     values: [0, 5000, 10000, 15000, 20000],
-                    format: d3.format(',.1f')
+                    format: d3.format(',.0f')
                 }
             },
             x: {
